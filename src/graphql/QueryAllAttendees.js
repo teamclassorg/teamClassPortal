@@ -12,10 +12,25 @@ export default gql`
       name
       lateRegistrationAnswerDate
       kitFullFitment {
-        shipmentTrackingNumber
-        fullfitmentDate
-        fullfitmentBy
         carrier
+        checkpoints {
+          checkpoint_time
+          created_at
+          message
+          raw_tag
+          slug
+          subtag
+          subtag_message
+          tag
+        }
+        expected_delivery
+        fullfitmentBy
+        fullfitmentDate
+        last_updated_at
+        shipmentTrackingNumber
+        slug
+        status
+        trackingStatusId
       }
       instructorOrDistributorId
       email

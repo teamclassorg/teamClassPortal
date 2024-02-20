@@ -139,6 +139,25 @@ const DataTableAttendees = ({
       }
     },
     {
+      name: "deliveryStatus",
+      selector: "kitFullFitment",
+      sortable: true,
+      maxWidth: "250px",
+      cell: (row) => {
+        return (
+          <a href={`${process.env.REACT_APP_PUBLIC_MAIN_WEBSITE_URL}/track/${row._id}`} target="_blank">
+            <div  className={!row.kitFullFitment ? "" : row.kitFullFitment?.status === "Delivered" ? "attendees-delivery-delivered" :
+              row.kitFullFitment?.status === "InfoReceived" ? "attendees-delivery-info-received" :
+              row.kitFullFitment?.status === "AvailableForPickup" ? "attendees-delivery-info-received" : 
+              row.kitFullFitment?.status === "InTransit" ? "attendees-delivery-in-transit" :
+              row.kitFullFitment?.status === "OutForDelivery" ? "attendees-delivery-out-for-delivery" : "attendees-delivery-other"}>
+              <span>{!row.kitFullFitment ? "" : row.kitFullFitment?.status === "AvailableForPickup" ? "Pickup" : row?.kitFullFitment?.status || "Shipped"}</span>
+          </div>
+          </a>
+        );
+      }
+    },
+    {
       name: "Status",
       selector: "status",
       sortable: true,

@@ -1,3 +1,55 @@
 .react-dataTable .rdt_TableBody .rdt_TableRow .rdt_TableCell {
     height: 65px !important;
 }
+
+.attendees-delivery-delivered,
+.attendees-delivery-info-received,
+.attendees-delivery-in-transit,
+.attendees-delivery-out-for-delivery,
+.attendees-delivery-out.for-delivery,
+.attendees-delivery-other{
+  width: 95px;
+  height: 25px;
+  border-radius: 100px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 17px;
+  color: #FFFFFF;
+  text-align: center;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.attendees-delivery-other {
+  background: gray;
+}
+
+.attendees-registred-badge-confirmed,
+.attendees-delivery-delivered {
+  background: #1D4ED8;
+}
+
+.attendees-registred-badge-pending,
+.attendees-delivery-info-received {
+  background: #EC9DC4;
+}
+
+.attendees-registred-badge-rejected,
+.attendees-delivery-in-transit {
+  background: #D83B89;
+}
+
+.attendees-registred-badge-accepted,
+.attendees-delivery-out-for-delivery {
+  background: #6366F1;
+  a {
+    color: #FFFFFF;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: blue;
+  }
+}
